@@ -1,0 +1,14 @@
+{
+  "name": "rnode",
+  "version": "1.0.0",
+  "description": "new and nice post app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nice"
+  ],
+  "author": "",
+  "license": "ISC"
+}
