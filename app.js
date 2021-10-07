@@ -5,15 +5,18 @@ const mysql = require('mysql')
 const cors = require('cors')
 app.use(cors())
 
+// metodas integruotas norint atpazinti gaunama uzkalausos objekta, kaip eilutes ar masyva
 app.use(express.urlencoded({
     extended: true
 }))
+
+//metodas integruotas norint atpazinti gaunama uzkalausos objekta kaip JSON objekta
 app.use(express.json());
 
 const con = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: '',
+    user: 'nodejs',
+    password: 'nodejs123456',
     database: 'articles'
 })
 
@@ -96,7 +99,7 @@ app.put('/posts/:id', (req, res) => {
 
 // rodo visus postus
 app.get('/posts', (req, res) => {
-    con.query('SELECT * FROM posts ORDER BY id DESC', (err, results) => {
+    con.query('SELECT * FROM posts ORDER BY id ASC', (err, results) => {
         if (err) {
             throw err;
         }
