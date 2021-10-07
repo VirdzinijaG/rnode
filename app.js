@@ -21,18 +21,26 @@ con.connect(err => {
 
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+// app.get('/', (req, res) => {
+//     res.send('Hello World!')
+// })
+
+// app.get('/labas', (req, res) => {
+//     res.send('Labas, Antanai')
+// })
+
+// app.get('/labas/:id', (req, res) => {
+//     res.send(`Pats tu ${req.params.id}`);
+// })
+
+
+// iraso nauja posta
+app.get('/posts', (req, res) => {
+    res.send(`Pats tu ${req.params.id}`)
 })
 
-app.get('/labas', (req, res) => {
-    res.send('Labas, Antanai')
-})
 
-app.get('/labas/:id', (req, res) => {
-    res.send(`Pats tu ${req.params.id}`);
-})
-
+// rodo visus postus
 app.get('/posts', (req, res) => {
     con.query('SELECT * FROM posts', (err, results) => {
         if (err) {
