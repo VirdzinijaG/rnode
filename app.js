@@ -99,7 +99,7 @@ app.put('/posts/:id', (req, res) => {
 
 // rodo visus postus
 app.get('/posts', (req, res) => {
-    con.query('SELECT * FROM posts ORDER BY id ASC', (err, results) => {
+    con.query('SELECT * FROM posts ORDER BY id DESC', (err, results) => {
         if (err) {
             throw err;
         }
